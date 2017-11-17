@@ -25,7 +25,7 @@ usage:
 
 
 
-`
+```
 设置tcp_tw_reuse=0
 
 使用reuseport，但不硬关闭连接
@@ -84,4 +84,4 @@ loop: 5, finished_count: 10000, failed_count: 0, time(s): 2
 loop: 6, finished_count: 10000, failed_count: 0, time(s): 2
 loop: 7, finished_count: 10000, failed_count: 0, time(s): 4
 loop: 8, finished_count: 10000, failed_count: 0, time(s): 1
-loop: 9, finished_count: 10000, failed_count: 0, time(s): 4`
+loop: 9, finished_count: 10000, failed_count: 0, time(s): 4```

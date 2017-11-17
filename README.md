@@ -29,6 +29,7 @@ usage:
 设置tcp_tw_reuse=0
 
 使用reuseport，但不硬关闭连接
+
 [huyuguang@dtrans1 ~/reuseport]$ ./reuseport.exe client 123.183.215.109 10 10000 1 0
 loop: 0, finished_count: 10000, failed_count: 0, time(s): 1
 loop: 1, finished_count: 10000, failed_count: 0, time(s): 8
@@ -42,6 +43,7 @@ loop: 8, finished_count: 2080, failed_count: 7920, time(s): 24
 loop: 9, finished_count: 8197, failed_count: 1803, time(s): 13
 
 不使用reuseport，不硬关闭连接
+
 [huyuguang@dtrans1 ~/reuseport]$ ./reuseport.exe client 123.183.215.109 10 10000 0 0
 loop: 0, finished_count: 10000, failed_count: 0, time(s): 3
 loop: 1, finished_count: 10000, failed_count: 0, time(s): 8
@@ -55,6 +57,7 @@ loop: 8, finished_count: 5451, failed_count: 4549, time(s): 14
 loop: 9, finished_count: 7423, failed_count: 2577, time(s): 10
 
 不使用reuseport，硬关闭连接
+
 [huyuguang@dtrans1 ~/reuseport]$ ./reuseport.exe client 123.183.215.109 10 10000 0 1
 loop: 0, finished_count: 10000, failed_count: 0, time(s): 4
 loop: 1, finished_count: 10000, failed_count: 0, time(s): 1
@@ -68,6 +71,7 @@ loop: 8, finished_count: 10000, failed_count: 0, time(s): 0
 loop: 9, finished_count: 10000, failed_count: 0, time(s): 0
 
 设置tcp_tw_reuse=1
+
 [huyuguang@dtrans1 ~/reuseport]$ ./reuseport.exe client 123.183.215.109 10 10000 0 0
 loop: 0, finished_count: 10000, failed_count: 0, time(s): 0
 loop: 1, finished_count: 10000, failed_count: 0, time(s): 5

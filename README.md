@@ -86,3 +86,12 @@ loop: 7, finished_count: 10000, failed_count: 0, time(s): 4
 loop: 8, finished_count: 10000, failed_count: 0, time(s): 1
 loop: 9, finished_count: 10000, failed_count: 0, time(s): 4
 ```
+
+SO_LINGER(1,0)是个处理TIME_WAIT以及CLOSE_WAIT的备选方案，不依赖于系统配置，不需要root权限。而且服务端和客户端都可以用，但是会修改网络逻辑。
+设置之后发出的不是FIN而是RST。
+
+如果要在编程层面解决这个问题，建议这样：
+
+1，不管是客户端还是服务端，如果是收到对方回应后调用shutdown，然后硬关闭。
+
+2，如果是发完数据就关闭，就得发完数据后调用shutdown，然后启动一个定时器，然后在3s之后硬关闭。

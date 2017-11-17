@@ -95,3 +95,5 @@ SO_LINGER(1,0)是个处理TIME_WAIT以及CLOSE_WAIT的备选方案，不依赖�
 1，不管是客户端还是服务端，如果是收到对方回应后调用shutdown，然后硬关闭。
 
 2，如果是发完数据就关闭，就得发完数据后调用shutdown，然后启动一个定时器，然后在3s之后硬关闭。
+
+调用shutdown（send）会导致一个FIN包发出。
